@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { padding: 10px; margin: 10px 0; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+
+    <h1>Invoice Dashboard</h1>
+
+    <button id="fetchEmails">Fetch Emails</button>
+
+    <h2>Invoices</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Invoice Number</th>
+                <th>Amount</th>
+                <th>Due Date</th>
+                <th>Sender</th>
+                <th>Email</th>
+                <th>Attachment</th>
+            </tr>
+        </thead>
+        <tbody id="invoiceTable">
+            <tr><td colspan="6">Loading...</td></tr>
+        </tbody>
+    </table>
+
+    <script>
+        function fetchInvoices() {
+            $.get("/invoices", function(data) {
+                let tableContent = "";
+                if (data.length === 0) {
+                    tableContent = "<tr><td colspan='6'>No invoices found.</td></tr>";
+                } else {
+                    data.forEach(invoice => {
+                        let downloadButton = invoice.attachment_filename ? 
+                            `<a href="/download/${invoice.email_uid}" download><button>Download</button></a>` 
+                            : "No attachment";
+                        
+                        tableContent += `<tr>
+                            <td>${invoice.invoice_number}</td>
+                            <td>$${invoice.amount}</td>
+                            <td>${invoice.due_date}</td>
+                            <td>${invoice.sender_name}</td>
+                            <td>${invoice.sender_email}</td>
+                            <td>${downloadButton}</td>
+                        </tr>`;
+                    });
+                }
+                $("#invoiceTable").html(tableContent);
+            });
+        }
+
+        $("#fetchEmails").click(() => {
+            $.post("/fetch-emails", function(response) {
+                alert(response.message);
+                setTimeout(fetchInvoices, 5000);
+            });
+        });
+
+        $(document).ready(fetchInvoices);
+    </script>
+
+</body>
+</html>

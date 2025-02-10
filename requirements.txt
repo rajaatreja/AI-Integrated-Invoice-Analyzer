@@ -1,0 +1,14 @@
+google-auth
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+psycopg2
+psycopg2-binary
+requests
+pdf2image
+pdfplumber
+pytesseract
+python-dateutil
+flask
+Pillow
+dateutil
