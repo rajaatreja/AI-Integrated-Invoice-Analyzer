@@ -43,18 +43,6 @@ cd AI-Integrated-Invoice-Analyzer
 pip install -r requirements.txt
 ```
 
-## Data
-
-Sample invoices are stored in the `data/` folder. These invoices can be used for testing email processing by sending them as attachments. The application will fetch these emails, extract invoice details, and store them in the PostgreSQL database.
-
-Additionally, the `data/screenshots/` folder contains images demonstrating different stages of the application workflow, including:
-
-- **Sample Inbox**: A screenshot of the all emails from a sample inbox.
-- **main.py Output**: Displaying extracted details such as invoice number, amount, and due date on Terminal.
-- **Web_App.py Output**: Showing how to run the app on teminal and the displayed output.
-- **Web Dashboard**: An interface for viewing and managing invoices.
-
-
 ### **Configure the application:**
 
 - Update `config/db_config.json` with your PostgreSQL database details.
@@ -66,6 +54,17 @@ Additionally, the `data/screenshots/` folder contains images demonstrating diffe
 ```sh
 python Web_App.py
 ```
+
+## Data
+
+Sample invoices are stored in the `data/` folder. These invoices can be used for testing email processing by sending them as attachments. The application will fetch these emails, extract invoice details, and store them in the PostgreSQL database.
+
+Additionally, the `data/screenshots/` folder contains images demonstrating different stages of the application workflow, including:
+
+- [**Sample Inbox**](screenshots/sample_inbox.png): A screenshot of the all emails from a sample inbox.
+- [**main.py Output**](screenshots/main_py_output.png): Displaying extracted details such as invoice number, amount, and due date on Terminal.
+- [**Web_App.py Output**](screenshots/web_app_py_output.png): Showing how to run the app on teminal and the displayed output.
+- [**Web Dashboard**](screenshots/web_dashboard.png): An interface for viewing and managing invoices.
 
 ## Usage
 
