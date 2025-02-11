@@ -28,6 +28,17 @@ This project is a web application that processes email invoices through API, ext
 - `requirements.txt` - List of dependencies.
 - `Web_App.py` - Flask web application.
 
+## Data
+
+Sample invoices are stored in the `data/` folder. These invoices can be used for testing email processing by sending them as attachments. The application will fetch these emails, extract invoice details, and store them in the PostgreSQL database.
+
+Additionally, the `data/screenshots/` folder contains images demonstrating different stages of the application workflow, including:
+
+- [Sample Inbox](data/screenshots/sample_inbox.png): A screenshot of the all emails from a sample inbox.
+- [main.py Output](data/screenshots/main_py_output.png): Displaying extracted details such as invoice number, amount, and due date on Terminal.
+- [Web_App.py Output](data/screenshots/web_app_py_output.png): Showing how to run the app on teminal and the displayed output.
+- [Web Dashboard](data/screenshots/web_dashboard.png): An interface for viewing and managing invoices.
+
 ## Setup
 
 ### **Clone the repository:**
@@ -54,17 +65,6 @@ pip install -r requirements.txt
 ```sh
 python Web_App.py
 ```
-
-## Data
-
-Sample invoices are stored in the `data/` folder. These invoices can be used for testing email processing by sending them as attachments. The application will fetch these emails, extract invoice details, and store them in the PostgreSQL database.
-
-Additionally, the `data/screenshots/` folder contains images demonstrating different stages of the application workflow, including:
-
-- [Sample Inbox](data/screenshots/sample_inbox.png): A screenshot of the all emails from a sample inbox.
-- [main.py Output](data/screenshots/main_py_output.png): Displaying extracted details such as invoice number, amount, and due date on Terminal.
-- [Web_App.py Output](data/screenshots/web_app_py_output.png): Showing how to run the app on teminal and the displayed output.
-- [Web Dashboard](data/screenshots/web_dashboard.png): An interface for viewing and managing invoices.
 
 ## Usage
 
