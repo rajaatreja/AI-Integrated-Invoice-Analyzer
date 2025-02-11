@@ -71,7 +71,7 @@ The application automates invoice email processing, extracts key details, and st
 
 1. **Fetching Emails**: The process starts with `main.py`, which initializes the database using `db_service.py` and then fetches emails from Gmail using `email_utils.py`, which interacts with the Gmail API (`gmail_service.py`).
 
-2. **Extracting Invoice Details**: Once an email is retrieved, its content is analyzed in `analyze_content.py` using Gemini AI (`gemini_service.py`). This extracts details like invoice number, amount, and due date.
+2. **Extracting Invoice Details**: Once an email is retrieved, its content is analyzed in `analyze_content.py` using Gemini AI (`gemini_service.py`). This extracts details like invoice number, amount, and due date in a `json` format.
 
 3. **Processing Attachments**: If an email contains a PDF invoice, `attachment_utils.py` downloads the file, and `pdf_processing.py` extracts text using PDFPlumber for digital PDFs or OCR (via Pytesseract) for scanned PDFs.
 
