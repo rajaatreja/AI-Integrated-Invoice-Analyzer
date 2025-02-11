@@ -38,6 +38,7 @@ Additionally, the `data/screenshots/` folder contains images demonstrating diffe
 - [main.py Output](data/screenshots/main_py_output.png): Displaying extracted details such as invoice number, amount, and due date on Terminal.
 - [Web_App.py Output](data/screenshots/web_app_py_output.png): Showing how to run the app on teminal and the displayed output.
 - [Web Dashboard](data/screenshots/web_dashboard.png): An interface for viewing and managing invoices.
+- [PostgreSQL](data/screenshots/postgresql.png): Status of table schema and data in the database after running the application.
 
 ## Setup
 
