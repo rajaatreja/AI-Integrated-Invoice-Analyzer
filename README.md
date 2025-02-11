@@ -75,10 +75,7 @@ The application automates invoice email processing, extracts key details, and st
 
 4. **Storing in Database**: Extracted invoice details are stored in PostgreSQL using `db_service.py`.
 
-5. **Web Interface**: The Flask web application (`Web_App.py`) allows users to:
-   - View invoices at `http://localhost:5000/invoices`
-   - Download attachments at `http://localhost:5000/download/<email_uid>`
-   - Trigger email fetching manually at `http://localhost:5000/fetch-emails`
+5. **Web Interface**: The Flask web application (`Web_App.py`) allows users to view invoices at `http://localhost:5000/`
 
 This automated workflow ensures efficient invoice management, minimizing manual efforts through an interactive web dashboard.
 
