@@ -9,9 +9,9 @@ This project is a web application that processes email invoices through API, ext
 ### **Directories and Files**
 
 - `config/` - Contains configuration files for database, API credentials, and tokens.
-  - `credentials.json` - Google API credentials. (Client secret file `to be downloaded` from Google Cloud project)
+  - `credentials.json` - Google API credentials. (Client secret file `to be downloaded` from [Google Cloud Platform](https://console.cloud.google.com/apis/credentials))
   - `db_config.json` - Database configuration. User need to update this configuration according to their database connection details.
-  - `gemini_api.json` - Gemini API token. User need to insert their own private Gemini API key.
+  - `gemini_api.json` - Gemini API token. User need to insert their own private [Gemini API](https://aistudio.google.com/apikey) key.
   - `token.json` - OAuth token for Gmail API. (This file is `automatically genereated` once the authentication is done through login)
 - `main.py` - Entry point for email processing.
 - `requirements.txt` - List of dependencies.
@@ -99,9 +99,11 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Acknowledgements
 
+- **Google Cloud Platform** - Platform for managing the cloud based projects or issuing APIs.
+- **Google Gemini AI** - Google's generative language model.
+- **Google API Python Client** - Integrates with Google services (Gmail API).
 - **Flask** - Web framework for building the application.
 - **psycopg2** - PostgreSQL database adapter for Python.
-- **Google API Python Client** - Integrates with Google services (Gmail API).
 - **PDFPlumber** - Extracts text from PDFs.
 - **Pytesseract** - OCR for extracting text from scanned PDFs.
 
