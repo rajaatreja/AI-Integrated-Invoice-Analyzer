@@ -61,10 +61,10 @@ Sample invoices are stored in the `data/` folder. These invoices can be used for
 
 Additionally, the `data/screenshots/` folder contains images demonstrating different stages of the application workflow, including:
 
-- [**Sample Inbox**](screenshots/sample_inbox.png): A screenshot of the all emails from a sample inbox.
-- [**main.py Output**](screenshots/main_py_output.png): Displaying extracted details such as invoice number, amount, and due date on Terminal.
-- [**Web_App.py Output**](screenshots/web_app_py_output.png): Showing how to run the app on teminal and the displayed output.
-- [**Web Dashboard**](screenshots/web_dashboard.png): An interface for viewing and managing invoices.
+- [**Sample Inbox**](data/screenshots/sample_inbox.png): A screenshot of the all emails from a sample inbox.
+- [**main.py Output**](data/screenshots/main_py_output.png): Displaying extracted details such as invoice number, amount, and due date on Terminal.
+- [**Web_App.py Output**](data/screenshots/web_app_py_output.png): Showing how to run the app on teminal and the displayed output.
+- [**Web Dashboard**](data/screenshots/web_dashboard.png): An interface for viewing and managing invoices.
 
 ## Usage
 
