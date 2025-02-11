@@ -13,19 +13,19 @@ This project is a web application that processes email invoices through API, ext
   - `db_config.json` - Database configuration. User need to update this configuration according to their database connection details.
   - `gemini_api.json` - Gemini API token. User need to insert their own private [Gemini API](https://aistudio.google.com/apikey) key.
   - `token.json` - OAuth token for Gmail API. (This file is `automatically genereated` once the authentication is done through login)
-- `main.py` - Entry point for email processing.
-- `requirements.txt` - List of dependencies.
 - `services/` - Contains service modules for database, Gmail, PDF processing, and Gemini API.
   - `db_service.py` - Database operations.
   - `gemini_service.py` - Gemini API integration.
   - `gmail_service.py` - Gmail API integration.
   - `pdf_processing.py` - PDF text extraction.
-- `templates/` - Contains HTML templates for the web interface.
-  - `index.html` - Main dashboard template.
 - `utils/` - Utility modules for email and attachment processing.
   - `analyze_content.py` - Analyzes email content.
   - `attachment_utils.py` - Handles email attachments.
   - `email_utils.py` - Fetches and processes emails.
+- `templates/` - Contains HTML templates for the web interface.
+  - `index.html` - Main dashboard template.
+- `main.py` - Entry point for email processing.
+- `requirements.txt` - List of dependencies.
 - `Web_App.py` - Flask web application.
 
 ## Setup
