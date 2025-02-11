@@ -2,6 +2,8 @@
 
 This project is a web application that processes email invoices through API, extracts relevant details using Google Gemini AI, and stores them in a PostgreSQL database. The application also provides a web interface to view and download stored invoices.
 
+![Dashboard Screenshot](data/Screenshot_3.png)
+
 ## Directory Structure
 
 ### **Directories and Files**
