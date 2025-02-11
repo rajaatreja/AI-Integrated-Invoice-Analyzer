@@ -2,17 +2,17 @@
 
 This project is a web application that processes email invoices through API, extracts relevant details using Google Gemini AI, and stores them in a PostgreSQL database. The application also provides a web interface to view and download stored invoices.
 
-![Dashboard Screenshot](data/Screenshot_3.png)
+![Dashboard Screenshot](data/screenshots/web_dashboard.png)
 
 ## Directory Structure
 
 ### **Directories and Files**
 
 - `config/` - Contains configuration files for database, API credentials, and tokens.
-  - `credentials.json` - Google API credentials. (Client secret file to be downloaded from Google Cloud project)
-  - `db_config.json` - Database configuration.
-  - `gemini_api.json` - Gemini API token.
-  - `token.json` - OAuth token for Gmail API. (This file is automatically genereated once the authentication is done through login)
+  - `credentials.json` - Google API credentials. (Client secret file `to be downloaded` from Google Cloud project)
+  - `db_config.json` - Database configuration. User need to update this configuration according to their database connection details.
+  - `gemini_api.json` - Gemini API token. User need to insert their own private Gemini API key.
+  - `token.json` - OAuth token for Gmail API. (This file is `automatically genereated` once the authentication is done through login)
 - `main.py` - Entry point for email processing.
 - `requirements.txt` - List of dependencies.
 - `services/` - Contains service modules for database, Gmail, PDF processing, and Gemini API.
@@ -43,6 +43,18 @@ cd AI-Integrated-Invoice-Analyzer
 pip install -r requirements.txt
 ```
 
+## Data
+
+Sample invoices are stored in the `data/` folder. These invoices can be used for testing email processing by sending them as attachments. The application will fetch these emails, extract invoice details, and store them in the PostgreSQL database.
+
+Additionally, the `data/screenshots/` folder contains images demonstrating different stages of the application workflow, including:
+
+- **Sample Inbox**: A screenshot of the all emails from a sample inbox.
+- **main.py Output**: Displaying extracted details such as invoice number, amount, and due date on Terminal.
+- **Web_App.py Output**: Showing how to run the app on teminal and the displayed output.
+- **Web Dashboard**: An interface for viewing and managing invoices.
+
+
 ### **Configure the application:**
 
 - Update `config/db_config.json` with your PostgreSQL database details.
@@ -61,7 +73,7 @@ python Web_App.py
 
 - **Dashboard:** Access the main dashboard at [http://localhost:5000/](http://localhost:5000/).
 
-### **Email Processing**
+### **Email Processing** (Optional)
 
 - **Start Email Processing:** Run `main.py` to initialize the database and fetch emails and print the output on the terminal.
 
