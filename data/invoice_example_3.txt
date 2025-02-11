@@ -1,0 +1,15 @@
+Subject: Invoice #INV-2025-001 for Your Recent Purchase
+
+Dear John Smith,
+
+I hope this email finds you well.
+
+We would like to inform you that your recent purchase has been processed successfully. The total amount due is $450.00, and the payment should be made by March 15, 2025.
+
+Please ensure that the payment is made by the due date to avoid any late fees. If you have any questions or need further assistance, feel free to contact us.
+
+Thank you for your prompt attention to this matter.
+
+Best regards, 
+
+Jane Doe Billing Department Tech Solutions Ltd.
