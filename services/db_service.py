@@ -5,7 +5,7 @@ from utils.attachment_utils import get_attachment_data
 
 def get_db_connection():
     try:
-        # Load database configuration from fb_config.json
+        # Load database configuration from db_config.json
         with open('config/db_config.json', 'r') as config_file:
             config = json.load(config_file)
         # Connect to PostgreSQL using the parameters from the JSON file
@@ -18,10 +18,12 @@ def get_db_connection():
         )
         return connection
     except Exception as e:
+        # Print an error message if the connection fails
         print(f"Error connecting to the database: {e}")
         return None
 
 def create_table():
+    # Get a connection to the database
     connection = get_db_connection()
     if connection is not None:
         try:
@@ -55,11 +57,14 @@ def create_table():
                 connection.commit()
 
         except Exception as e:
+            # Print an error message if table creation fails
             print(f"Error creating table: {e}")
         finally:
+            # Close the cursor and connection
             cursor.close()
             connection.close()
     else:
+        # Print a message if the connection to the database failed
         print("Connection to the database failed!")
 
 # Function to convert date to PostgreSQL-friendly format
@@ -72,11 +77,13 @@ def convert_to_postgres_date(date_str):
         # Return the date in PostgreSQL-friendly format (YYYY-MM-DD)
         return parsed_date.strftime("%Y-%m-%d")
     except (ValueError, TypeError) as e:
+        # Print an error message if the date format is invalid
         print(f"Invalid date format: {date_str}")
         return None
     
 def store_invoice_data_in_db(extracted_data, msg_id, payload):
     """Store the extracted invoice data and attachments in the database."""
+    # Get a connection to the database
     connection = get_db_connection()
     if connection:
         try:
@@ -133,10 +140,13 @@ def store_invoice_data_in_db(extracted_data, msg_id, payload):
 
             connection.commit()
             cursor.close()
+            # Print a success message after saving the invoice
             print(f"Invoice {extracted_data.get('invoice_number')} saved successfully.")
 
         except Exception as e:
+            # Print an error message if inserting invoice data fails
             print(f"Error inserting invoice data into PostgreSQL: {e}")
 
         finally:
+            # Close the connection to the database
             connection.close()

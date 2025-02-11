@@ -3,7 +3,7 @@ import threading
 import psycopg2
 import io
 import json
-from main import start_email_processing  # Import your email processing script
+from main import start_email_processing  # Importing email processing script
 
 app = Flask(__name__)
 
@@ -27,13 +27,16 @@ def get_db_connection():
 @app.route("/invoices")
 def get_invoices():
     try:
+        # Get a connection to the database
         connection = get_db_connection()
         cursor = connection.cursor()
+        # Execute the query to fetch all invoices
         cursor.execute("SELECT email_uid, invoice_number, amount, due_date, sender_name, sender_email, attachment_filename FROM invoices")
         invoices = cursor.fetchall()
         cursor.close()
         connection.close()
 
+        # Return the fetched invoices as a JSON response
         return jsonify([{
             "email_uid": row[0],
             "invoice_number": row[1],
@@ -45,6 +48,7 @@ def get_invoices():
         } for row in invoices])
 
     except Exception as e:
+        # Return an error message if fetching invoices fails
         return jsonify({"error": str(e)})
 
 # Download invoice attachment
@@ -68,6 +72,7 @@ def download_attachment(email_uid):
                 download_name=filename
             )
         else:
+            # Return a 404 error if no attachment is found
             return "No attachment found", 404
 
     except Exception as e:
@@ -86,4 +91,5 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
+    # Run the Flask app in debug mode
     app.run(debug=True)

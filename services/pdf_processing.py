@@ -6,6 +6,7 @@ from pdf2image import convert_from_path
 # Function to extract invoice details from PDF attachments
 def extract_pdf_text(pdf_data):
     """Extract text from PDF data (binary format)."""
+    # Try to extract text from the PDF
     text = extract_text_from_pdf(pdf_data)
     if text is None:
         # Fallback to OCR if no text was extracted
@@ -20,9 +21,11 @@ def extract_text_from_pdf(pdf_data):
         with pdfplumber.open(BytesIO(pdf_data)) as pdf:
             text = ""
             for page in pdf.pages:
+                # Extract text from each page and append it to the text variable
                 text += page.extract_text() + "\n"
         return text if text.strip() else None
     except Exception as e:
+        # Print an error message if text extraction fails
         print(f"Error extracting text from PDF: {e}")
         return None
 
@@ -34,8 +37,10 @@ def extract_text_from_scanned_pdf(pdf_data):
         images = convert_from_path(BytesIO(pdf_data))
         text = ""
         for img in images:
+            # Use OCR to extract text from each image and append it to the text variable
             text += pytesseract.image_to_string(img) + "\n"
         return text
     except Exception as e:
+        # Print an error message if OCR text extraction fails
         print(f"Error extracting text from scanned PDF: {e}")
         return ""
